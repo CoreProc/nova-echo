@@ -82,17 +82,39 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.Pusher = __webpack_require__(3);
 
 var echoOptions = {
-  broadcaster: document.head.querySelector('meta[name="broadcaster"]').content,
-  key: document.head.querySelector('meta[name="pusher_key"]').content,
-  cluster: document.head.querySelector('meta[name="pusher_cluster"]').content,
-  wsHost: document.head.querySelector('meta[name="pusher_host"]').content,
-  wsPort: document.head.querySelector('meta[name="pusher_port"]').content,
-  encrypted: true
+  broadcaster: document.head.querySelector('meta[name="broadcaster"]').content
+};
 
-  // Check if we need to define auth endpoint
-};if (document.head.querySelector('meta[name="auth_endpoint"]') !== null) {
+if (document.head.querySelector('meta[name="host"]') !== null) {
+  echoOptions.host = document.head.querySelector('meta[name="host"]').content;
+}
+
+if (document.head.querySelector('meta[name="pusher_key"]') !== null) {
+  echoOptions.key = document.head.querySelector('meta[name="pusher_key"]').content;
+}
+
+if (document.head.querySelector('meta[name="pusher_cluster"]') !== null) {
+  echoOptions.cluster = document.head.querySelector('meta[name="pusher_cluster"]').content;
+}
+
+if (document.head.querySelector('meta[name="pusher_host"]') !== null) {
+  echoOptions.wsHost = document.head.querySelector('meta[name="pusher_host"]').content;
+}
+
+if (document.head.querySelector('meta[name="pusher_port"]') !== null) {
+  echoOptions.wsPort = document.head.querySelector('meta[name="pusher_port"]').content;
+}
+
+if (document.head.querySelector('meta[name="pusher_encrypted"]') !== null) {
+  echoOptions.encrypted = document.head.querySelector('meta[name="pusher_encrypted"]').content === '1';
+}
+
+// Check if we need to define auth endpoint
+if (document.head.querySelector('meta[name="auth_endpoint"]') !== null) {
   echoOptions.authEndpoint = document.head.querySelector('meta[name="auth_endpoint"]').content;
 }
+
+console.log(echoOptions);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */](echoOptions);
 
