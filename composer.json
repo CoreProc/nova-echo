@@ -1,9 +1,14 @@
 {
     "name": "coreproc/nova-echo",
-    "description": "A Laravel Nova tool.",
+    "description": "Adds Laravel Echo with your broadcast configuration to your Laravel Nova app",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "echo",
+        "websockets",
+        "socket-io",
+        "broadcasting",
+        "real-time"
     ],
     "license": "MIT",
     "require": {
