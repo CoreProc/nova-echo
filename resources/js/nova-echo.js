@@ -35,8 +35,6 @@ if (document.head.querySelector('meta[name="auth_endpoint"]') !== null) {
   echoOptions.authEndpoint = document.head.querySelector('meta[name="auth_endpoint"]').content
 }
 
-console.log(echoOptions)
-
 window.Echo = new Echo(echoOptions)
 
 let userReceivesBroadcastOn = document.head.querySelector('meta[name="user_private_channel"]').content
