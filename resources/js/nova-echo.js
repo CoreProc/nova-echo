@@ -26,6 +26,10 @@ if (document.head.querySelector('meta[name="pusher_port"]') !== null) {
   echoOptions.wsPort = document.head.querySelector('meta[name="pusher_port"]').content
 }
 
+if (document.head.querySelector('meta[name="pusher_port"]') !== null) {
+  echoOptions.wssPort = document.head.querySelector('meta[name="pusher_port"]').content
+}
+
 if (document.head.querySelector('meta[name="pusher_encrypted"]') !== null) {
   echoOptions.encrypted = (document.head.querySelector('meta[name="pusher_encrypted"]').content === '1')
 }
